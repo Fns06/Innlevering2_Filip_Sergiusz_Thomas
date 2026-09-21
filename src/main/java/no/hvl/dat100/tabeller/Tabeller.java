@@ -4,10 +4,7 @@ public class Tabeller {
 
 	// a)
 	public static void skrivUt(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
-
+		System.out.print(tabell);
 	}
 
 	// b)
@@ -19,9 +16,13 @@ public class Tabeller {
 
 	// c)
 	public static int summer(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden summer ikke implementert");
+		int nummer = 0;
+		int sum = 0;
+		while (nummer < tabell.length) {
+			sum += tabell[nummer];
+			nummer++;
+		}
+		return sum;
 	}
 
 	// d)
@@ -34,9 +35,16 @@ public class Tabeller {
 
 	// e)
 	public static int posisjonTall(int[] tabell, int tall) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden posisjonTall ikke implementert");
+		int tallet = 0;
+		for (int i = 0; i < tabell.length;i++){
+			if (tabell[i] == tall){
+				tallet = tall;
+			}
+			else{
+				tallet = -1;
+			}
+		}
+		return tallet;
 	}
 
 	// f)
@@ -48,9 +56,16 @@ public class Tabeller {
 
 	// g)
 	public static boolean erSortert(int[] tabell) {
+		boolean erStigende = true;
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden erSortert ikke implementert");
+		//tabell.length + 1 fordi den sjekker i+1, noe som ikke kan være null
+		for(int i = 0; i < tabell.length + 1; i++){
+			if(tabell[i] > tabell[i+1]){
+				erStigende = false;
+			}
+		}
+
+		return erStigende;
 	}
 
 	// h)

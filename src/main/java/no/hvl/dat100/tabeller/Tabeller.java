@@ -82,8 +82,11 @@ public class Tabeller {
 		boolean erStigende = true;
 
 		//tabell.length + 1 fordi den sjekker i+1, noe som ikke kan være null
-		for(int i = 0; i < tabell.length + 1; i++){
-			if(tabell[i] > tabell[i+1]){
+		
+		for (int i = 0; i < tabell.length - 1; i++){
+			
+			if (tabell[i] > tabell[i+1]) {
+				
 				erStigende = false;
 			}
 		}

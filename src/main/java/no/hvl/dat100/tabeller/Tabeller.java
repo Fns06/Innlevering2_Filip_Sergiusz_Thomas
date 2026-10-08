@@ -4,7 +4,10 @@ public class Tabeller {
 
 	// a)
 	public static void skrivUt(int[] tabell) {
-		System.out.print(tabell);
+		
+		for (int i = 0; i < tabell.length; i++) {
+			System.out.println(tabell[i] + " ");
+		}
 	}
 
 	// b)
@@ -52,18 +55,16 @@ public class Tabeller {
 
 	// e)
 	public static int posisjonTall(int[] tabell, int tall) {
-		int index = 0;
-		boolean tallFunnet = false;
-		for (int i = 0; i < tabell.length;i++){
-			if (tabell[i] == tall){
-				index = i;
-				tallFunnet = true;
+		
+		for (int i = 0; i < tabell.length; i++) {
+
+			if (tabell[i] == tall) {
+				
+				return i;
 			}
 		}
-		if(!tallFunnet){
-			index = -1;
-		}
-		return index;
+
+		return -1;
 	}
 
 	// f)
@@ -87,7 +88,7 @@ public class Tabeller {
 		
 		for (int i = 0; i < tabell.length - 1; i++){
 			
-			if (tabell[i] > tabell[i+1]) {
+			if (tabell[i] >= tabell[i+1]) {
 				
 				erStigende = false;
 			}

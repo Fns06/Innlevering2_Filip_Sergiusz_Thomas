@@ -34,16 +34,20 @@ public class Matriser {
 
 	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
-		int[][] nyMatrise = matrise.clone();
+    	
+		int[][] nyMatrise = new int[matrise.length][];
 
-		for(int i = 0; i < matrise.length; i++){
-			for(int j = 0; j < matrise[i].length; j++){
-				nyMatrise[i][j] = matrise[i][j] * tall;
-			}
-		}
-		return  nyMatrise;
-	
+    	for (int i = 0; i < matrise.length; i++) {
+        	nyMatrise[i] = new int[matrise[i].length];
+
+        	for (int j = 0; j < matrise[i].length; j++) {
+            	nyMatrise[i][j] = matrise[i][j] * tall;
+        	}
+    	}
+
+    	return nyMatrise;
 	}
+		
 
 	// d)
 	public static boolean erLik(int[][] a, int[][] b) {
@@ -54,6 +58,10 @@ public class Matriser {
 		}
 
 		for (int i = 0; i < a.length; i ++) {
+
+			if (a[i].length != b[i].length) {
+				return false;
+			}
 			
 			for (int j = 0; j < a[i].length; j++) {
 
@@ -65,15 +73,8 @@ public class Matriser {
 		
 		return true;
 	}
-	
-	// e)
-	public static int[][] speile(int[][] matrise) {
 
-		// TODO
-
-		throw new UnsupportedOperationException("Metoden speile ikke implementert");
-	
-	}
+	//e) Metoden speile har vi valgt å ikke gjøre!
 
 	// f)
 	public static int[][] multipliser(int[][] a, int[][] b) {
